@@ -1,3 +1,4 @@
+import "./polyfills";
 import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
 import { createRoot } from "react-dom/client";
@@ -13,7 +14,11 @@ import { AuthProvider } from "react-auth-kit";
 import { WikelwagenProvider } from "./services/WinkelwagenContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const baseUrl = document.getElementsByTagName("base")[0].getAttribute("href");
+console.log("React is starting...");
+
+const baseTag = document.getElementsByTagName("base")[0];
+const baseUrl = (baseTag && baseTag.getAttribute("href")) || "/";
+
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
@@ -26,7 +31,7 @@ root.render(
         cookieDomain={window.location.hostname}
         cookieSecure={false}
     >
-        <BrowserRouter basename={baseUrl}>
+        <BrowserRouter basename="/">
             <WikelwagenProvider>
                 <QueryClientProvider client={queryClient}>
                     <App />

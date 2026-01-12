@@ -59,14 +59,13 @@
     "css-what": "^5.0.1",
     "nth-check": "^3.0.1"
   },
-  "scripts": {
-    "prestart": "node aspnetcore-https && node aspnetcore-react",
-    "start": "rimraf ./build && react-scripts start",
-    "build": "CI=false && react-scripts build",
-    "test": "cross-env CI=true react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "lint": "eslint ./src/"
-  },
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "bruh": "serve -s build"
+
+},
   "eslintConfig": {
     "extends": [
       "react-app"
