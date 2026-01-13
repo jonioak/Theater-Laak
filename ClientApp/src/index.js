@@ -12,6 +12,11 @@ import "@fontsource/roboto/700.css";
 import { AuthProvider } from "react-auth-kit";
 import { WikelwagenProvider } from "./services/WinkelwagenContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import axios from "axios";
+
+if (process.env.NODE_ENV === "production") {
+    axios.defaults.baseURL = "https://theater-laak-production.up.railway.app";
+}
 
 const baseUrl = document.getElementsByTagName("base")[0].getAttribute("href");
 const rootElement = document.getElementById("root");
