@@ -8,7 +8,7 @@ const target = env.ASPNETCORE_HTTPS_PORT
     : "https://localhost:7085";
 
 const context = [
-    "/weatherforecast",
+    "/api/weatherforecast",
     "/api/auth/verifieer",
     "/api/auth/bevestig",
     "/api/auth/login",
@@ -39,7 +39,8 @@ const context = [
     "/api/medewerker/voorstellingen",
     "/api/medewerker/planning",
     "/api/huurevent",
-    "/api/homepage/getrandomvoorstellingen",
+    "/api/homepage",
+    "/api/voorstellingevent"
 ];
 
 module.exports = function (app) {
