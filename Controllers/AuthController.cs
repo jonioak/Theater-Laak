@@ -90,10 +90,11 @@ public class AuthController : ControllerBase
                 var roles = await _userManager.GetRolesAsync(_user);
                 foreach (var role in roles)
                     claims.Add(new Claim(ClaimTypes.Role, role));
+                
                 var tokenOptions = new JwtSecurityToken
                 (
-                    issuer: "https://localhost:7047",
-                    audience: "https://localhost:7047",
+                    issuer: "TheaterLaakBackend",
+                    audience: "TheaterLaakFrontend",
                     claims: claims,
                     expires: DateTime.Now.AddMinutes(60),
                     signingCredentials: signingCredentials

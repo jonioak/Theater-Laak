@@ -8,39 +8,7 @@ const target = env.ASPNETCORE_HTTPS_PORT
     : "https://localhost:7085";
 
 const context = [
-    "/api/weatherforecast",
-    "/api/auth/verifieer",
-    "/api/auth/bevestig",
-    "/api/auth/login",
-    "/api/auth/registreer",
-    "/api/auth/wachtwoordvergeten",
-    "/api/auth/resetwachtwoord",
-    "/api/account",
-    "/api/rollen/start",
-    "/api/voorstelling",
-    "/api/planning",
-    "/api/betaal/setup",
-    "/api/betaal/verify",
-    "/api/init",
-    "/api/ticket",
-    
-    "/api/interesse",
-    "/api/auth/getidbyemail",
-    "/api/interesse/AddInteresseGast",
-    "/api/interesse/GetInteressesByGastId",
-    "/api/ticket/qrcode",
-    "/api/donatie/token",
-    "/api/donatie",
-    "/api/medewerker",
-    "/api/medewerker/accounts",
-    "/api/medewerker/accounts/add",
-    "/api/medewerker/accounts/get",
-    "/api/medewerker/accounts/delete",
-    "/api/medewerker/voorstellingen",
-    "/api/medewerker/planning",
-    "/api/huurevent",
-    "/api/homepage",
-    "/api/voorstellingevent"
+    "/api",
 ];
 
 module.exports = function (app) {
