@@ -88,6 +88,43 @@ namespace Backend.Services
 
             context.Voorstellingen.AddRange(voorstellingen);
             context.SaveChanges();
+
+            var voorstellingEvents = new VoorstellingEvent[]
+            {
+                new VoorstellingEvent
+                {
+                    Voorstelling = voorstellingen[0],
+                    DatumBereik = new DatumBereik { Van = DateTime.Now.AddDays(2), Tot = DateTime.Now.AddDays(2).AddHours(3) },
+                    Zaal = 1
+                },
+                new VoorstellingEvent
+                {
+                    Voorstelling = voorstellingen[1],
+                    DatumBereik = new DatumBereik { Van = DateTime.Now.AddDays(5), Tot = DateTime.Now.AddDays(5).AddHours(2) },
+                    Zaal = 2
+                },
+                new VoorstellingEvent
+                {
+                    Voorstelling = voorstellingen[2],
+                    DatumBereik = new DatumBereik { Van = DateTime.Now.AddDays(10), Tot = DateTime.Now.AddDays(10).AddHours(2) },
+                    Zaal = 3
+                },
+                new VoorstellingEvent
+                {
+                    Voorstelling = voorstellingen[3],
+                    DatumBereik = new DatumBereik { Van = DateTime.Now.AddDays(12), Tot = DateTime.Now.AddDays(12).AddHours(2) },
+                    Zaal = 1
+                },
+                new VoorstellingEvent
+                {
+                    Voorstelling = voorstellingen[0],
+                    DatumBereik = new DatumBereik { Van = DateTime.Now.AddDays(15), Tot = DateTime.Now.AddDays(15).AddHours(3) },
+                    Zaal = 1
+                }
+            };
+
+            context.VoorstellingEvents.AddRange(voorstellingEvents);
+            context.SaveChanges();
         }
     }
 }
